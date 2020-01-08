@@ -1,6 +1,6 @@
 
 # About 
-The is a pytorch implementation of DeepLabV3 for semantic scene segmentation, trained on Cityscapes dataset. 
+This is a pytorch implementation of DeepLabV3 for semantic scene segmentation, trained on Cityscapes dataset. 
 
 # How to run it?
 
