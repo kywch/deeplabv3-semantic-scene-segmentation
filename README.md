@@ -1,6 +1,10 @@
 
+
 # About 
 This is a pytorch implementation of DeepLabV3 for semantic scene segmentation, trained on Cityscapes dataset. 
+
+
+# Make it work on the RCC Midway
 
 # How to run it?
 
