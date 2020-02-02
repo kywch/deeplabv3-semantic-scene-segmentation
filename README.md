@@ -5,6 +5,8 @@ This is a pytorch implementation of DeepLabV3 for semantic scene segmentation, t
 
 
 # Make it work on the RCC Midway
+Try PIL instead of opencv for reading images -- https://www.geeksforgeeks.org/reading-images-in-python/
+
 
 # How to run it?
 
