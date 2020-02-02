@@ -2,9 +2,9 @@
 
 # About 
 This is a pytorch implementation of DeepLabV3 for semantic scene segmentation, trained on Cityscapes dataset. 
+The code comes from https://github.com/fregu856/deeplabv3
 
-
-# How to run in the UChicago RCC cluster
+# How to run this in the UChicago RCC cluster
 1. Grab an interactive GPU node using the sinteractive command.
 2. (As of 02/02/2020) Load the modules. NOTE: you need to setup your own local conda env so that it can run ```import torchvision``` and ```import cv2```. For example, see https://github.com/kywch/deep-learning-practice/blob/master/RCC_midway2.md
 ```
