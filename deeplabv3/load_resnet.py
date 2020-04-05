@@ -90,13 +90,13 @@ class Bottleneck(nn.Module):
         return out
 
 class ResNet_Bottleneck_OS16(nn.Module):
-    def __init__(self, num_layers):
+    def __init__(self, pretrained_file, num_layers):
         super(ResNet_Bottleneck_OS16, self).__init__()
 
         if num_layers == 50:
             resnet = models.resnet50()
             # load pretrained model:
-            resnet.load_state_dict(torch.load("resnet50-19c8e357.pth"))
+            resnet.load_state_dict(torch.load(pretrained_file))
             # remove fully connected layer, avg pool and layer5:
             self.resnet = nn.Sequential(*list(resnet.children())[:-3])
 
@@ -104,7 +104,7 @@ class ResNet_Bottleneck_OS16(nn.Module):
         elif num_layers == 101:
             resnet = models.resnet101()
             # load pretrained model:
-            resnet.load_state_dict(torch.load("resnet101-5d3b4d8f.pth"))
+            resnet.load_state_dict(torch.load(pretrained_file))
             # remove fully connected layer, avg pool and layer5:
             self.resnet = nn.Sequential(*list(resnet.children())[:-3])
 
@@ -112,7 +112,7 @@ class ResNet_Bottleneck_OS16(nn.Module):
         elif num_layers == 152:
             resnet = models.resnet152()
             # load pretrained model:
-            resnet.load_state_dict(torch.load("resnet152-b121ed2d.pth"))
+            resnet.load_state_dict(torch.load(pretrained_file))
             # remove fully connected layer, avg pool and layer5:
             self.resnet = nn.Sequential(*list(resnet.children())[:-3])
 
@@ -133,13 +133,13 @@ class ResNet_Bottleneck_OS16(nn.Module):
         return output
 
 class ResNet_BasicBlock_OS16(nn.Module):
-    def __init__(self, num_layers):
+    def __init__(self, pretrained_file, num_layers):
         super(ResNet_BasicBlock_OS16, self).__init__()
 
         if num_layers == 18:
             resnet = models.resnet18()
             # load pretrained model:
-            resnet.load_state_dict(torch.load("resnet18-5c106cde.pth"))
+            resnet.load_state_dict(torch.load(pretrained_file))
             # remove fully connected layer, avg pool and layer5:
             self.resnet = nn.Sequential(*list(resnet.children())[:-3])
 
@@ -148,7 +148,7 @@ class ResNet_BasicBlock_OS16(nn.Module):
         elif num_layers == 34:
             resnet = models.resnet34()
             # load pretrained model:
-            resnet.load_state_dict(torch.load("resnet34-333f7ec4.pth"))
+            resnet.load_state_dict(torch.load(pretrained_file))
             # remove fully connected layer, avg pool and layer5:
             self.resnet = nn.Sequential(*list(resnet.children())[:-3])
 
@@ -211,20 +211,20 @@ class ResNet_BasicBlock_OS8(nn.Module):
 
         return output
 
-def ResNet18_OS16():
-    return ResNet_BasicBlock_OS16(num_layers=18)
+def ResNet18_OS16(pretrained_file):
+    return ResNet_BasicBlock_OS16(pretrained_file, num_layers=18)
 
-def ResNet34_OS16():
-    return ResNet_BasicBlock_OS16(num_layers=34)
+def ResNet34_OS16(pretrained_file):
+    return ResNet_BasicBlock_OS16(pretrained_file, num_layers=34)
 
-def ResNet50_OS16():
-    return ResNet_Bottleneck_OS16(num_layers=50)
+def ResNet50_OS16(pretrained_file):
+    return ResNet_Bottleneck_OS16(pretrained_file, num_layers=50)
 
-def ResNet101_OS16():
-    return ResNet_Bottleneck_OS16(num_layers=101)
+def ResNet101_OS16(pretrained_file):
+    return ResNet_Bottleneck_OS16(pretrained_file, num_layers=101)
 
-def ResNet152_OS16():
-    return ResNet_Bottleneck_OS16(num_layers=152)
+def ResNet152_OS16(pretrained_file):
+    return ResNet_Bottleneck_OS16(pretrained_file, num_layers=152)
 
 def ResNet18_OS8(pretrained_file):
     return ResNet_BasicBlock_OS8(pretrained_file, num_layers=18)
