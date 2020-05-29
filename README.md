@@ -4,6 +4,10 @@
 This is a pytorch implementation of DeepLabV3 for semantic scene segmentation, trained on Cityscapes dataset. 
 The code comes from https://github.com/fregu856/deeplabv3
 
+# This code runs on Google Colab
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kywch/deeplabv3-semantic-scene-segmentation/blob/master/Google-colab_scene_segmentation.ipynb)
+
 # How to run this in the UChicago RCC cluster
 1. Grab an interactive GPU node using the sinteractive command.
 2. Load the necessary modules. NOTE: you need to setup your own local conda env so that it can run ```import torchvision``` and ```import cv2```. For example, see https://github.com/kywch/deep-learning-practice/blob/master/RCC_midway2.md. Or, you can create a conda environment that can run the script using the environment.yml file here: ```conda env create -f environment.yml```
